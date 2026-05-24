@@ -1,13 +1,13 @@
 # Overcoming Class Imbalance in Materials Discovery
 
-**Paper:** [Link to published paper or preprint]
-**Author:** Johaimen M. Omar
+
+**Author:** Johaimen M. Omar & Kemal Akyol
 
 ## Overview
 This repository contains the complete code, dataset, and results for the cross-validated ablation study on high-mobility p-type semiconductor screening. The pipeline addresses extreme class imbalance (19.3:1) in the BoltzTraP database by applying Borderline-SMOTE strictly within training folds to prevent data leakage.
 
 ## Repository Structure
-"""
+"
 materials-imbalance-screening/
 ├── README.md                         
 ├── requirements.txt                  
@@ -35,7 +35,7 @@ materials-imbalance-screening/
     ├── Fig6_Threshold_Sensitivity.pdf
     ├── Fig7_Ensemble_Comparison.pdf
     └── Fig8_Learning_Curve.pdf
-"""
+"
 
 
 ## Reproducing the Results
