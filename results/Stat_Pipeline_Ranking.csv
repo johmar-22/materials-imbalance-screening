@@ -1,0 +1,7 @@
+Rank,Pipeline,F2 Wilcoxon wins,McNemar wins,F1 Wilcoxon wins,Recall Wilcoxon wins,MCC Wilcoxon wins,Mean F2-Score
+1,2. Ablate SMOTE,0,5,0,0,0,0.4487
+2,5. Dummy Baseline,0,4,0,0,0,0.0
+3,1. Full Pipeline,0,3,0,0,0,0.6078
+4,3. Ablate Feat. Select,0,2,0,0,0,0.5707
+5,4. Ablate XGBoost,0,1,0,0,0,0.578
+6,6. RUS Pipeline,0,0,0,0,0,0.5496
