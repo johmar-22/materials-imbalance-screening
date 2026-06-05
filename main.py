@@ -55,6 +55,34 @@ print("="*60)
 
 df = pd.read_csv(os.path.join(data_dir, 'boltztrap_mp.csv'))
 
+# 1b. DATA CLEANING
+# The six BoltzTraP transport features used for target definition and modelling.
+SIX_FEATURES = ['m_n', 'PF_n', 'S_n', 'm_p', 'PF_p', 'S_p']
+n_raw = len(df)
+
+# (i) Duplicate mpid check — keep first occurrence
+if 'mpid' in df.columns:
+    n_dup = df.duplicated(subset='mpid').sum()
+    if n_dup > 0:
+        print(f"  [Cleaning] Removing {n_dup} duplicate mpid row(s).")
+        df = df.drop_duplicates(subset='mpid', keep='first').reset_index(drop=True)
+    else:
+        print(f"  [Cleaning] No duplicate mpid entries found.")
+else:
+    print("  [Cleaning] Column 'mpid' not found — skipping duplicate check.")
+
+# (ii) NaN check across the six transport features — drop incomplete rows
+n_nan_rows = df[SIX_FEATURES].isnull().any(axis=1).sum()
+if n_nan_rows > 0:
+    print(f"  [Cleaning] Removing {n_nan_rows} row(s) with NaN in transport features.")
+    df = df.dropna(subset=SIX_FEATURES).reset_index(drop=True)
+else:
+    print(f"  [Cleaning] No NaN values found in the six transport features.")
+
+n_retained = len(df)
+print(f"  [Cleaning] Raw: {n_raw:,}  |  Retained: {n_retained:,}  "
+      f"|  Removed: {n_raw - n_retained:,}")
+
 # Positive class: m_p < 1.0 m_e — the dispersive-valence-band prerequisite
 # for hole mobility (Hautier et al. 2013, Nat. Commun.; Wang et al. 2024).
 # This is a necessary but not sufficient condition for realized p-type
