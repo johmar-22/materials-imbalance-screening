@@ -2,7 +2,7 @@
 
 Code, data, and results for the manuscript:
 
-> J. M. Omar and K. Akyol, "Handling Class Imbalance in High-Throughput Materials Simulation Data: A Cross-Validated Ablation Benchmark on an Ab Initio Transport Database." Under review, *Journal of Computational Electronics*.
+> J. M. Omar and K. Akyol, "Handling Class Imbalance in High-Throughput Materials' Simulation Data: A Cross-Validated Ablation Benchmark on an Ab Initio Transport Database." *Journal of Computational Electronics*.
 
 ## What the study does
 
