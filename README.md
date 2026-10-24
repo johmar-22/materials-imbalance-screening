@@ -71,7 +71,7 @@ python scripts/fig1_spearman.py       # Figure 1
 
 Each of the first two scripts took a few minutes on a 2-core machine.
 
-Note: Running `main.py` overwrites the stored files in results/. To compare with the published values afterwards, run `git diff results/`.
+Note: Running `main.py` overwrites the stored files in `results/`. To compare with the published values afterwards, run `git diff results/`.
 
 ## Reproducibility check
 
