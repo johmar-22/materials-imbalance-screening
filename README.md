@@ -71,6 +71,8 @@ python scripts/fig1_spearman.py       # Figure 1
 
 Each of the first two scripts took a few minutes on a 2-core machine.
 
+Note: Running main.py overwrites the stored files in results/. To compare with the published values afterwards, run 'git diff results/'.
+
 ## Reproducibility check
 
 The stored results were produced in Google Colab; the library versions used there were not recorded. On 29 September 2026 we reran the code with the versions in `requirements.txt` (Python 3.11). The rerun reproduced exactly:
