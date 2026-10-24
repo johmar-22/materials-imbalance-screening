@@ -71,7 +71,13 @@ python scripts/fig1_spearman.py       # Figure 1
 
 Each of the first two scripts took a few minutes on a 2-core machine.
 
-Note: Running `main.py` overwrites the stored files in `results/`. To compare with the published values afterwards, run `git diff results/`.
+Notes: 
+
+Running `main.py` overwrites the stored files in `results/`. To compare with the published values afterwards, run `git diff results/`.
+
+`scripts/adasyn_sensitivity.py` keeps the pipeline names of main.py. In its output, “Ablate SMOTE” means the pipeline without ADASYN. Pipelines 2, 5 and 6 contain no oversampler, so their results are identical in both scripts; only Pipelines 1, 3 and 4 change. Table 5 uses row “1. Full Pipeline” of `results/adasyn_sensitivity/Ablation_Study_Metrics.csv`.
+
+The line “Recommended pipeline” printed at the end of both scripts ranks pipelines by the number of significant McNemar wins, because no Wilcoxon test can reach significance with five folds. It reflects total errors, not the recall-weighted objective of the paper, and should not be read as the paper’s recommendation.
 
 ## Reproducibility check
 
